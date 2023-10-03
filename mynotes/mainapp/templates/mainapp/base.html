@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Мои заметки</title>
+<meta name="keywords" content="corner template, html css layout, one page, 5 sections, templatemo" />
+<meta name="description" content="Corner Template is a mini site layout in one page, 5 sections" />
+{% load static %}
+<link href="{% static 'mainapp/templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<span id="top"></span>
+<div id="templatemo_wrapper">
+	<div id="templatmeo_header">
+
+            <h1><a href="{% url 'home' %}">Мои заметки</a></h1>
+
+        <div id="templatemo_menu">
+            <ul>
+                <li class="{% if page == 'home' %} active {% endif %}"><a href="{% url 'home' %}">Главная</a></li>
+
+            </ul>
+        </div> <!-- end of templatemo_menu -->
+	</div> <!-- end of header -->
+
+    <div id="templatemo_main">
+
+    	<div id="home" class="content_top"></div>
+    	<div class="content_box">
+        	<div class="content_title content_home"></div>
+
+            {% block content %}{% endblock %}
+
+		  <div class="cleaner h30"></div>
+
+            <div class="cleaner"></div>
+            <a href="#" class="gototop">Go To Top</a>
+        </div>
+    </div>
+
+    <div id="templatemo_footer">
+
+        Copyright © 2023 <a href="#">Мои заметки</a>
+
+        <div class="cleaner"></div>
+    </div>
+
+</div> <!-- end of warpper -->
+
+
+</body>
+
+</html>
