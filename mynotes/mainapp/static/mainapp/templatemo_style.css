@@ -34,6 +34,11 @@ h4 { font-size: 18px; margin: 0 0 15px; padding: 0; }
 h5 { font-size: 16px; margin: 0 0 10px; padding: 0;  }
 h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 
+p.main{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 16px;
+}
+
 .cleaner { clear: both }
 .h10 { height: 10px }
 .h20 { height: 20px }
@@ -164,7 +169,6 @@ a.gototop:hover { text-decoration: underline }
 	width: 800px;
 	padding: 0 0 20px 6px;
 	text-align: center;
-	background: url(images/templatemo_footer.jpg) center top no-repeat
 }
 
 #templatemo_footer a { color: #000 }
