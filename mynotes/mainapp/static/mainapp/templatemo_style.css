@@ -58,6 +58,27 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 .tmo_list li a { color: #bfb839; font-weight: normal; font-size: 12px; text-decoration: none }
 .tmo_list li a:hover { color: #bfb839; text-decoration: underline }
 
+.alert {
+    position: relative;
+    top: 10;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 0px;
+    line-height: 1.8;
+    border-radius: 5px;
+    cursor: hand;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 400;
+    background-color: #FAFAD2;
+    border: 1px solid #DED;
+	color: #930;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+}
 
 #templatemo_wrapper {
 	width: 806px;

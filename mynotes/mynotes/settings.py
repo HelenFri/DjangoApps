@@ -12,6 +12,17 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+from django.contrib.messages import constants as messages
+
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,7 +88,7 @@ WSGI_APPLICATION = 'mynotes.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'App_Notes',
+        'NAME': 'App_notes',
         'USER': 'postgres',
         'PASSWORD': '+Ecgt{5',
         'HOST': 'localhost',
@@ -127,5 +138,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = "mainapp.User"
+AUTH_USER_MODEL = "mainapp.NewUser"
 

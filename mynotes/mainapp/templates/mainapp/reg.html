@@ -17,33 +17,62 @@
           <form method="post" name="reg" action="#">
               {% csrf_token %}
 
-              <label for="username">Ник:</label> <input type="text" id="username" name="username"
+              <label for="username">Ник:</label> <input required placeholder="Обязательное поле" type="text"
+                                                        id="username"
+                                                        name="username"
                                                        class="required input_field" />
               <div class="cleaner h10"></div>
 
-              <label for="first_name">Имя:</label> <input type="text" id="first_name" name="first_name"
-                                                       class="required input_field" />
+              <label for="first_name">Имя:</label> <input required placeholder="Обязательное поле"
+                                                          type="text" id="first_name"
+                                                          name="first_name"
+                                                          class="required input_field" />
               <div class="cleaner h10"></div>
 
-              <label for="last_name">Фамилия:</label> <input type="text" id="last_name" name="last_name"
-                                                       class="required input_field" />
+              <label for="last_name">Фамилия:</label> <input required placeholder="Обязательное поле"
+                                                             type="text" id="last_name"
+                                                             name="last_name"
+                                                             class="required input_field" />
               <div class="cleaner h10"></div>
 
-              <label for="email">Email:</label> <input type="text" id="email" name="email" class="validate-email required input_field" />
+              <label for="email">Email:</label> <input required placeholder="Обязательное поле"
+                                                       type="text" id="email"
+                                                       name="email"
+                                                       class="validate-email required input_field" />
               <div class="cleaner h10"></div>
 
-              <label for="password1">Пароль:</label> <input type="text" id="password1" name="password1"
-                                                        class="required input_field" />
+              <label for="password1">Пароль:</label> <input required placeholder="Обязательное поле"
+                                                            type="password"
+                                                            id="password1"
+                                                            name="password1"
+                                                            class="required input_field"
+                                                            oninput="check()" />
               <div class="cleaner h10"></div>
 
-              <label for="password2">Подтвердите пароль:</label> <input type="text" id="password2" name="password2"
-                                                        class="required input_field" />
+              <label for="password2">Подтвердите пароль:</label> <input required placeholder="Обязательное поле"
+                                                                        type="password" id="password2"
+                                                                        name="password2"
+                                                                        class="required input_field"
+                                                                        oninput="check(this)"/>
+
+                    <script>
+                            function check() {
+                            var input = document.getElementById('password2');
+                            if (document.getElementById('password2').value != document.getElementById('password1').value) {
+                                input.setCustomValidity('Пароли должны совпадать!');
+                            } else {
+                                // input is valid -- reset the error message
+                                input.setCustomValidity('');
+                            }
+                        }
+                    </script>
               <div class="cleaner h10"></div>
 
               <input type="submit" class="submit_btn" name="submit" id="submit" value="Send" />
               <input type="reset" class="submit_btn" name="reset" id="reset" value="Reset" />
 
           </form>
+
 
           </div>
       </div>
