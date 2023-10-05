@@ -12,7 +12,7 @@ class NewUser(AbstractUser):
         self.save()
 
 
-class Notes(models.Model):
+class Note(models.Model):
     Text = models.TextField()
     User = models.ForeignKey(NewUser, on_delete=models.CASCADE)
 

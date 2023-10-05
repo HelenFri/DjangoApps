@@ -1,0 +1,11 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+
+<h2>Мои заметки</h2>
+
+            {% for note in notes %}
+              <p class="my-note">{{note.Text}}</p>
+            {% endfor %}
+
+{% endblock %}

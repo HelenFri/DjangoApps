@@ -11,8 +11,8 @@ urlpatterns = [
     path('login', views.login_page, name='login'),
     path('logout', views.logout_page, name='logout'),
     path('logout/', views.logout_page, name='logout'),
-    # path('notes', views.notes, name='notes'),
-    # path('notes/', views.notes, name='notes'),
+    path('notes', views.notes, name='notes'),
+    path('notes/', views.notes, name='notes'),
     path('add_note', views.add_note, name='add_note'),
     path('add_note/', views.add_note, name='add_note'),
 

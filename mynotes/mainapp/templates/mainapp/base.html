@@ -22,6 +22,7 @@
         <div id="templatemo_menu">
             <ul>
                 <li class="{% if page == 'home' %} active {% endif %}"><a href="{% url 'home' %}">Главная</a></li>
+                <li class="{%if page == 'notes' %} active {% endif %}"><a href="{% url 'notes' %}">Мои заметки</a></li>
                 <li class="{% if page == 'add_note' %} active {%endif%}"><a href="{% url 'add_note' %}">Добавить заметку</a></li>
                 <li class="{% if page == 'reg' %} active {% endif %}"><a href="{% url 'reg' %}">Регистрация</a></li>
                 <li class="{% if page == 'login' %} active {% endif %}"><a href="{% url 'login' %}">Авторизация</a></li>
