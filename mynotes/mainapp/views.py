@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 from .models import NewUser
@@ -26,3 +27,24 @@ def reg(request):
 
     return render(request, 'mainapp/reg.html', context={'page': reg})
 
+
+def login_page(request):
+    if request.method == 'GET':
+        return render(request, 'mainapp/login.html', context={'page': login})
+
+    data = request.POST
+    user = authenticate(request, username=data['username'], password=data['password'])
+
+    if user is None:
+        messages.error(request, f'Пользователь с такими логином и паролем не найден.')
+        return redirect(login_page)
+    else:
+        login(request, user)
+        messages.success(request, f'Вы успешно авторизованы.')
+        return redirect(home)
+
+
+def logout_page(request):
+    logout(request)
+    messages.info(request, f'Вы успешно вышли из аккаунта')
+    return redirect(home)

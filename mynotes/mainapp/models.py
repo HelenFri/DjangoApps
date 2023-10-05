@@ -14,7 +14,7 @@ class NewUser(AbstractUser):
 
 class Notes(models.Model):
     Text = models.TextField()
-    Note_id = models.ForeignKey(NewUser, on_delete=models.CASCADE)
+    Note_id = models.ForeignKey(NewUser, on_delete=models.CASCADE)   # User instead of Note_id!!!!
 
 
 

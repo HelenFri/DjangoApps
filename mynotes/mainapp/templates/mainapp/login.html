@@ -1,0 +1,42 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+
+<h2>Авторизация</h2>
+    <div class="cleaner"></div>
+
+      <p>  Чтобы воспользоваться приложением, зайдите в свой аккаунт.</p>
+      <div class="cleaner h30"></div>
+
+      <div class="col_w310 float_l">
+
+          <div id="contact_form">
+
+          <form method="post" name="login" action="#">
+              {% csrf_token %}
+
+              <label for="username">Ник:</label> <input required type="text"
+                                                        id="username"
+                                                        name="username"
+                                                       class="required input_field" />
+              <div class="cleaner h10"></div>
+
+
+              <label for="password">Пароль:</label> <input required
+                                                            type="password"
+                                                            id="password"
+                                                            name="password"
+                                                            class="required input_field" />
+              <div class="cleaner h10"></div>
+
+
+              <input type="submit" class="submit_btn" name="submit" id="submit" value="Send" />
+              <input type="reset" class="submit_btn" name="reset" id="reset" value="Reset" />
+
+          </form>
+
+
+          </div>
+      </div>
+
+{% endblock %}
