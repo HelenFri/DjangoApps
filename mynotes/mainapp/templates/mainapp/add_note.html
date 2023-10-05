@@ -1,0 +1,37 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+
+<h2>Добавление заметок</h2>
+    <div class="cleaner"></div>
+
+      <p>  Чтобы добавить заметку, воспользуйтесь текстовым полем ниже.</p>
+      <div class="cleaner h30"></div>
+
+      <div class="col_w310 float_l">
+
+          <div id="contact_form">
+
+          <form method="post" name="add_note" action="#">
+              {% csrf_token %}
+
+              <label for="note-text">Текст заметки:</label> <textarea required rows="5" cols="80"
+                                                        id="note-text"
+                                                        name="note-text"
+                                                        class="required input_field"></textarea>
+
+              <div class="cleaner h10"></div>
+
+
+              <input type="submit" class="submit_btn" name="submit" id="submit" value="Добавить заметку" /><br>
+              <br>
+              <input type="reset" class="submit_btn" name="reset" id="reset" value="Очистить форму" />
+
+          </form>
+
+
+          </div>
+      </div>
+
+
+{% endblock %}

@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
-from .models import NewUser
+from .models import NewUser, Notes
 
 
 def home(request):
@@ -45,6 +45,30 @@ def login_page(request):
 
 
 def logout_page(request):
-    logout(request)
-    messages.info(request, f'Вы успешно вышли из аккаунта')
+    if request.user.is_authenticated:
+        logout(request)
+        messages.info(request, f'Вы вышли из аккаунта.')
+        return redirect(home)
+
+    messages.info(request, f'Вы не авторизованы.')
+    return redirect(home)
+
+
+# def notes(request):
+#     if request.user.is_authenticated:
+#         notes = Notes.objects.filter(username="ethanj23").first()
+#
+#     messages.info(request, f'Вы не авторизованы.')
+#     return redirect(home)
+
+def add_note(request):
+    if request.user.is_authenticated:
+        data = request.POST
+        txt = data.get('note-text')
+        note = Notes()
+        note.create_note(txt, request.user)
+        messages.info(request, f'Заметка добавлена.')
+        return render(request, 'mainapp/add_note.html')
+
+    messages.info(request, f'Войдите в аккаунт, чтобы добавлять заметки.')
     return redirect(home)
